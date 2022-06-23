@@ -1,2 +1,2 @@
 #!/bin/bash
-cp -rua *.html ../
+mkdir -p welcome/to/school
