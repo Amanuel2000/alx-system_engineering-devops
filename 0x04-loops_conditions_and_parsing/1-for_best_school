@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 # A script that displays Best School 10 times using for
+<<<<<<< HEAD
 for ((i = 0; i<=10; i++))
+=======
+
+for ((i = 1; i <= 10; i++))
+>>>>>>> e2d9ff8a96d7d5cb0087f4ae92a3c992ec531717
 do
     echo "Best School"
 done
