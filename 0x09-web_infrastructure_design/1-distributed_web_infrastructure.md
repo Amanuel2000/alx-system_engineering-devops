@@ -10,7 +10,7 @@ The new configuration is composed of two master-servers and one slave-servers. A
 
 ## What distribution algorithm your load balancer is configured with and how it works
 
-Our load-balancer is using a Round Robin algorithm distribution. Meaning the queries requested are distributed to every server sequentially one after another. And after sending the request to the last server, the algorithm startarts from the first server. This will bring on average and approximately, to a server load distribution of 50% on each of the two servers configuration.
+My load-balancer is using a Round Robin algorithm distribution. Meaning the queries requested are distributed to every server sequentially one after another. And after sending the request to the last server, the algorithm starts from the first server. This will bring on average and approximately, to a server load distribution of 50% on each of the two servers configuration.
 
 ## Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
 
@@ -31,3 +31,13 @@ As in the asynchronous replication process, replication is done by sending data 
 ## What is the difference between the primary node and the replica node in regard to the application.
 
 One of the main differences between the primary node and the replica node, regarding the application, is that the primary database is regarded as the authoritative source, while the replica database is synchronized to it. The primary node serves as the keeper of information, here the “real” data is kept, then writing only happens here. On the other hand, reading only occurs in the replica or slave node. This architecture purpose is due to safeguard site reliability. In case a site receives a lot of traffic, a replica node prevents overloading of the master node with reading and writing requests. This eases the load of the entire system preventing it to collapse (Theodorus, 2020).
+
+## Issues With This Infrastructure
+
+There are multiple SPOF (Single Point Of Failure).
+
+- For example, if the Primary MySQL database server is down, the entire site would be unable to make changes to the site (including adding or removing users). The server containing the load balancer and the application server connecting to the primary database server are also SPOFs.
+  Security issues.
+- The data transmitted over the network isn't encrypted using an SSL certificate so hackers can spy on the network. There is no way of blocking unauthorized IPs since there's no firewall installed on any server.
+  No monitoring.
+  We have no way of knowing the status of each server since they're not being monitored.
