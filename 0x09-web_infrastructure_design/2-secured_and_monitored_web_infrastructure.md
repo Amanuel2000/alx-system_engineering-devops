@@ -1,4 +1,8 @@
-# Description
+# Secured and monitored web infrastructure
+
+![Image of a Secured and monitored web infrastructure](2-secured_and_monitored_web_infrastructure.jpg)
+
+## Description
 
 ## For every additional element, why you are adding it
 
