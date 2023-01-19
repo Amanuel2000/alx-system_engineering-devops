@@ -12,8 +12,8 @@ frontend  amanuel-frontend
         default_backend amanuel-backend
 backend amanuel-backend
         balance roundrobin
-        server 74068-web-01 54.197.206.225 check
-        server 74068-web-02 100.26.57.47 check
+        server 74068-web-01 54.197.206.225:80 check
+        server 74068-web-02 100.26.57.47:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 # enable haproxy to be started by init script
