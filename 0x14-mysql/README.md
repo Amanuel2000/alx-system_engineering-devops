@@ -1,1 +1,1 @@
-# MySQL solutions
+# Solutions to MySQQL
